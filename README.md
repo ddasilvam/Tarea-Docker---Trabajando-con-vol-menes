@@ -32,7 +32,6 @@ Comprobamos que se ha creado y se está ejecutando mediante el comando `docker p
     CONTAINER ID   IMAGE          COMMAND              CREATED          STATUS          PORTS                                   NAMES
     dd5e04b72af2   httpd:latest   "httpd-foreground"   56 seconds ago   Up 55 seconds   0.0.0.0:8000->80/tcp, :::8000->80/tcp   asir_httpd
 ```
-## Commit V1
 ## 5. Realiza un 'hola mundo' en html y comprueba que accedes desde el navegador
 Accedemos al directorio `htdocs` donde se aloja la raíz del servidor web y creamos un fichero llamado `index.html' en su interior. Lo abrimos con cualquier editor (VSCode, por ejemplo) y pegamos el siguiente código:
 ```console
@@ -43,6 +42,11 @@ Accedemos al directorio `htdocs` donde se aloja la raíz del servidor web y crea
 </html>
 ```
 Si intentamos acceder al servidor con nuestro navegador utilizando la dirección `localhost:8000` vemos que se muestra el código recién creado.
+
 ![Servidor web mostrando hola mundo](./imagenes/captura.png)
-## Commit V2
+## 6. Crea un contenedor 'asir_web1' que use este mismo directorio para 'htdocs' y el puerto 8000
+## 7. Utiliza Code para hacer un hola mundo en html
+Paramos el contenedor anterior ejecutando `docker stop asir_httpd`
+Para crear el contenedor ejecutamos el comando `docker run -dit --name asir_web1 -p 8000:80 -v "$PWD"/htdocs:/usr/local/apache2/htdocs/ httpd:latest`
+Como ya tenemos creado anteriormente con el Code un `index.html` con el "Hola mundo", se nos mostrará al abrir `localhost:8000` en el navegador.
 
