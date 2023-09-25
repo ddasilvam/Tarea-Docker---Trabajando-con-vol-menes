@@ -46,7 +46,13 @@ Si intentamos acceder al servidor con nuestro navegador utilizando la dirección
 ![Servidor web mostrando hola mundo](./imagenes/captura.png)
 ## 6. Crea un contenedor 'asir_web1' que use este mismo directorio para 'htdocs' y el puerto 8000
 ## 7. Utiliza Code para hacer un hola mundo en html
-Paramos el contenedor anterior ejecutando `docker stop asir_httpd`
-Para crear el contenedor ejecutamos el comando `docker run -dit --name asir_web1 -p 8000:80 -v "$PWD"/htdocs:/usr/local/apache2/htdocs/ httpd:latest`
+Paramos el contenedor anterior ejecutando `docker stop asir_httpd`.
+Para crear el contenedor ejecutamos el comando `docker run -dit --name asir_web1 -p 8000:80 -v "$PWD"/htdocs:/usr/local/apache2/htdocs/ httpd:latest`.
 Como ya tenemos creado anteriormente con el Code un `index.html` con el "Hola mundo", se nos mostrará al abrir `localhost:8000` en el navegador.
+## 8.Crea otro contenedor 'asir_web2' con el mismo directorio y a otro puerto, por ejemplo 9080.
+## 9. Comprueba que los dos servidores 'sirven' la misma página, es decir, cuando consultamos en el navegador http://localhost:9080 y http://localhost:8000:
+## 10. Tienen que salir la misma página web
+Para crear el contenedor ejecutamos el comando `docker run -dit --name asir_web2 -p 9080:80 -v "$PWD"/htdocs:/usr/local/apache2/htdocs/ httpd:latest`.
+Ahora tenemos dos servidores que muestran la misma web alojada en el mismo directorio. Si accedemos a ambas direcciones, podemos ver en el navegador la misma página web.
 
+![Ambos servidores web mostrando hola mundo](./imagenes/captura2.png)
