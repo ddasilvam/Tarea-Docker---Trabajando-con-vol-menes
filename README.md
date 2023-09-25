@@ -41,7 +41,8 @@ Accedemos al directorio `htdocs` donde se aloja la raíz del servidor web y crea
         <h1>Hola mundo</h1>
     </body>
 </html>
-```console
+```
 Si intentamos acceder al servidor con nuestro navegador utilizando la dirección `localhost:8000` vemos que se muestra el código recién creado.
-![Servidor web mostrando hola mundo](imagenes/captura.png)
+![Servidor web mostrando hola mundo](./imagenes/captura.png)
+## Commit V2
 
