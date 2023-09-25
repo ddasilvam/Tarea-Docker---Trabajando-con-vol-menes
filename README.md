@@ -33,4 +33,15 @@ Comprobamos que se ha creado y se está ejecutando mediante el comando `docker p
     dd5e04b72af2   httpd:latest   "httpd-foreground"   56 seconds ago   Up 55 seconds   0.0.0.0:8000->80/tcp, :::8000->80/tcp   asir_httpd
 ```
 ## Commit V1
+## 5. Realiza un 'hola mundo' en html y comprueba que accedes desde el navegador
+Accedemos al directorio `htdocs` donde se aloja la raíz del servidor web y creamos un fichero llamado `index.html' en su interior. Lo abrimos con cualquier editor (VSCode, por ejemplo) y pegamos el siguiente código:
+```console
+<html>
+    <body>
+        <h1>Hola mundo</h1>
+    </body>
+</html>
+```console
+Si intentamos acceder al servidor con nuestro navegador utilizando la dirección `localhost:8000` vemos que se muestra el código recién creado.
+![Servidor web mostrando hola mundo](imagenes/captura.png)
 
